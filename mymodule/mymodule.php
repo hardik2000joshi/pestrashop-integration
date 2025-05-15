@@ -52,13 +52,27 @@
             }
 
             return parent::install() // parent::install() runs base install logic from module class
-            && $this->registerHook('displayHome')  // register your module to appear on home page
+            && $this->registerHook('paymentOptions')  // Using payment option
             && Configuration::updateValue('MYMODULE_Name', 'my module'); // saves a configuration setting in PrestaShop Database
         }
-        public function hookDisplayHome($params){
-            return '<p> Hello My Module! </p>';
+         public function hookPaymentOption($params){
+            // checking is module is active in prestashop or not
+            if(!this->active){
+                return [];
+            }
+            // check if cart/currency/shoop context is valid or not
+            if(!$this->checkCurrency($params['cart'])) {
+                return [];
+            }
+            // create a new payment option
+            $newOption=new PrestaShop/PrestaShop/Core/PaymentOption(); // how payment methods displayed at checkout
+            $newOption->setModuleName($this->name) // setModuleName sets internal identifier for payment option
+                      ->setCallToActionText($this->l('pay by MyModule')) // sets button text which customers see at checkout
+                      ->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
+                      // setAction() where customer is redirected when selecting payment method
+                      // getModuleLink() creates secure URL to your module's validation controller
+                      return [$newOption]; // Return array containing payment option
         }
-       
         public function uninstall(){    
             // uninstall() method that would delete the data which added to the database during installation
             return(
