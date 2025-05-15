@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
     <?php
     // _PS_ version : By specifying _PS_ version, prevent the module from being installed on unsupported versions
     if (!defined('_PS_VERSION_')) {
         # code...
         exit;
     }
-    class MyModule extends Module{
-        public function _construct() {
+    // Import the payment option class
+    use Prestashop\Prestashop\Core\Payment\PaymentOption;
+    class MyModule extends PaymentModule{
+        public function __construct() // __construct() magic method in php that's called when object of class initialized 
+        {
             $this->name='mymodule';
             $this->tab='front_office_features';
             $this->version='1.0.0';     
@@ -28,7 +24,7 @@
             $this->bootstrap=true;
             // By setting bootstrap= true, informing PrestaShop that your module's back office interface should be rendered
             // using Bootstrap-compatible HTML and CSS
-            parent::_construct();
+            parent::__construct();  
 
             $this->displayName=$this->trans('My Module', [], 'Modules.Mymodule.Admin');
             $this->description=$this->trans('Description of my module.', [], 'Modules.Mymodule.Admin'); 
@@ -37,7 +33,7 @@
 
             // A warning that module doesn't have its MYMODULE_NAME
             if(!Configuration::get('MYMODULE_NAME')) {
-                $this->warning=$this->trans('No name provided', [], 'Modules.Mymodule.Admin');
+                $this->warning = $this->trans('No name provided', [], 'Modules.Mymodule.Admin');
             }
         }
 
@@ -53,19 +49,19 @@
 
             return parent::install() // parent::install() runs base install logic from module class
             && $this->registerHook('paymentOptions')  // Using payment option
-            && Configuration::updateValue('MYMODULE_Name', 'my module'); // saves a configuration setting in PrestaShop Database
+            && Configuration::updateValue('MYMODULE_NAME', 'my module'); // saves a configuration setting in PrestaShop Database
         }
          public function hookPaymentOption($params){
             // checking is module is active in prestashop or not
-            if(!this->active){
+            if(!$this->active){
                 return [];
             }
-            // check if cart/currency/shoop context is valid or not
+            // check if cart/currency/shop context is valid or not
             if(!$this->checkCurrency($params['cart'])) {
                 return [];
             }
             // create a new payment option
-            $newOption=new PrestaShop/PrestaShop/Core/PaymentOption(); // how payment methods displayed at checkout
+            $newOption= new PaymentOption(); // initialize the payment method option
             $newOption->setModuleName($this->name) // setModuleName sets internal identifier for payment option
                       ->setCallToActionText($this->l('pay by MyModule')) // sets button text which customers see at checkout
                       ->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
@@ -100,35 +96,35 @@
                     // $this->l built-in method provided by presta shop's module class
                     if (empty($configValue) ||  !Validate::isGenericName($configValue)) {
                         // invalid value, show an error
-                        $output=$this->displayError($this->K('Invalid Configuration value'));
+                        $output=$this->displayError($this->l('Invalid Configuration value'));
                     }
                     else {
                         // value is correct now update value and display confirmation message
-                        configuration::updateValue("MYMODULE_CONFIG", $configValue);
-                        $output=$this->displayConfirmation($this->K("Settings updated"));
+                        Configuration::updateValue("MYMODULE_CONFIG", $configValue);
+                        $output=$this->displayConfirmation($this->l("Settings updated"));
                     }
-                }
+                }   
                 return $output . $this->displayForm();
                 // displayForm() to confirm whether if it is submitted or not
             } 
             // form-validation by php arrays using prestashop's methods- form fields using php arrays
-            public function displayform(){
+            public function displayForm(){
                 $form=[
                     'form'=>[
                     'legend'=>[
-                        'title'=> this->K('settings'),
+                        'title'=> $this->l('settings'),
                     ],
                             'input'=>[
                                 [
                                     'type' => 'text',
-                                    'label' => $this->K('Configuration value'),
+                                    'label' => $this->l('Configuration value'),
                                     'name' => 'MYMODULE_CONFIG',
                                     'size' => 18,
                                     'required' => true,  
                                 ],
                                 ],  
                                 'submit'=>[
-                                    'title' => $this->K('save'),
+                                    'title' => $this->l('save'),
                                     'class' => 'btn btn-default pull-right',
                                 ],
                             ],
@@ -143,12 +139,5 @@
                         $helper->submit_action='submit' . $this->name;  
                         return $helper->generateForm([$form]); 
        }
-        }
-        
-
-    
-
-         
+    } 
     ?>
-</body>
-</html>
