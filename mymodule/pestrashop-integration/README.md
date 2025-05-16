@@ -1,1 +1,0 @@
-# pestrashop-integration
