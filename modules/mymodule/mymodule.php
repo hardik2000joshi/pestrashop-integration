@@ -47,9 +47,12 @@
                 Shop::setContext(Shop::CONTEXT_ALL); 
             }
 
-            return parent::install() // parent::install() runs base install logic from module class
-            && $this->registerHook('paymentOptions')  // Using payment option
-            && Configuration::updateValue('MYMODULE_NAME', 'my module'); // saves a configuration setting in PrestaShop Database
+            // paymentOptions- shows your custom payment method at checkout
+            // paymentReturn- shows a confirmation message after payment
+            return parent::install() && // parent::install() runs base install logic from module class
+            $this->registerHook('paymentOptions') &&  // for checkout
+            $this->registerHook('payment return'); &&  // for after checkout 
+            Configuration::updateValue('MYMODULE_NAME', 'my module'); // saves a configuration setting in PrestaShop Database
         }
          public function hookPaymentOption($params){
             // checking is module is active in prestashop or not
@@ -57,17 +60,26 @@
                 return [];
             }
             // check if cart/currency/shop context is valid or not
-            if(!$this->checkCurrency($params['cart'])) {
+           /* if(!$this->checkCurrency($params['cart'])) {
                 return [];
-            }
+            }*/
             // create a new payment option
             $newOption= new PaymentOption(); // initialize the payment method option
             $newOption->setModuleName($this->name) // setModuleName sets internal identifier for payment option
                       ->setCallToActionText($this->l('pay by MyModule')) // sets button text which customers see at checkout
                       ->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
+                      ->setAdditionalInformation($this->fetch('modules:mymodule/views/templates/front/payment_info.tpl'));
                       // setAction() where customer is redirected when selecting payment method
                       // getModuleLink() creates secure URL to your module's validation controller
                       return [$newOption]; // Return array containing payment option
+        }
+
+        public function hookPaymentReturn($params){
+            // checking if module is active or not in prestashop
+            if(!$this->active){
+                return;
+            }
+            return $this->fetch('modules:mymodule/views/templates/front/payment_return.tpl');    
         }
         public function uninstall(){    
             // uninstall() method that would delete the data which added to the database during installation
