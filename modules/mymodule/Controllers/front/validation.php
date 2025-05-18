@@ -2,14 +2,23 @@
 class MyModuleValidationModuleFrontController extends ModuleFrontController {
 
     // helper method: sendPaymentRequest
-    private function sendPaymentRequest($data) {
+    private function sendPaymentRequest($data) { 
         // using curl to send POST request to payment provider
         $ch= curl_init('https://your-payment-gateway.com/api/pay');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         $response=curl_exec($ch);
+        if($response===false){
+            // could log curl_error($ch) for debugging
+             curl_close($ch);
+             return ['status'=>'error', 'message'=>'curl error'];    
+        }
         curl_close($ch);
-        return json_decode($response, true);
+        $result=json_decode($response, true);
+        if(!is_array($result)) {
+            return ['status'=>'error', 'message'=>'Invalid JSON'];
+        }
+        return $result; 
     }
     public function postProcess(){
         // Here you can validate  cart, send to external payment, etc. 
