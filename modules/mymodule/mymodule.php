@@ -51,7 +51,7 @@
             // paymentReturn- shows a confirmation message after payment
             return parent::install()  // parent::install() runs base install logic from module class
             && $this->registerHook('paymentOptions')  // for checkout
-            && $this->registerHook('paymentReturn');  // for after checkout- registration of hook 
+            && $this->registerHook('paymentReturn') // for after checkout- registration of hook 
             && Configuration::updateValue('MYMODULE_NAME', 'my module'); // saves a configuration setting in PrestaShop Database
         }
          public function hookPaymentOption($params){
@@ -63,14 +63,22 @@
            if(!$this->checkCurrency($params['cart'])) {
                 return;
             }
+
+            // Assign total to payment_info.tpl template
+             $this->context->smarty->assign([
+                'total'=>$params['cart']->getOrderTotal(true, Cart::BOTH),
+                      ]);
+
             // create a new payment option
-            $newOption= new PaymentOption(); // initialize the payment method option
+            $newOption= new PaymentOption();
+            // setAction() where customer is redirected when selecting payment method
+            // getModuleLink() creates secure URL to your module's validation controller
             $newOption->setModuleName($this->name) // setModuleName sets internal identifier for payment option
                       ->setCallToActionText($this->l('pay by MyModule')) // sets button text which customers see at checkout
-                      ->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
-                      ->setAdditionalInformation($this->fetch('modules:' .$this->name. '/views/templates/front/payment_info.tpl'));
-                      // setAction() where customer is redirected when selecting payment method
-                      // getModuleLink() creates secure URL to your module's validation controller
+                      ->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true))
+                      ->setAdditionalInformation(
+                        $this->context->smarty->fetch('modules:mymodule/views/templates/front/payment_info.tpl')
+                    );
                       return [$newOption]; // Return array containing payment option
         } 
 
