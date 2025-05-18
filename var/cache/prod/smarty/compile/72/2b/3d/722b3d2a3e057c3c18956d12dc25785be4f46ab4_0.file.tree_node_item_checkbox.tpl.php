@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:40
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:07
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\scenes\helpers\tree\tree_node_item_checkbox.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af70d4c6c1_62715577',
+  'unifunc' => 'content_6828e3bfc05bf1_25639110',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af70d4c6c1_62715577 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3bfc05bf1_25639110 (Smarty_Internal_Template $_smarty_tpl) {
 ?><li class="tree-item<?php if ((isset($_smarty_tpl->tpl_vars['node']->value['disabled'])) && $_smarty_tpl->tpl_vars['node']->value['disabled'] == true) {?> tree-item-disable<?php }?>">
 	<span class="tree-item-name">
 		<input type="checkbox" name="categories[]" value="<?php echo $_smarty_tpl->tpl_vars['node']->value['id_category'];?>

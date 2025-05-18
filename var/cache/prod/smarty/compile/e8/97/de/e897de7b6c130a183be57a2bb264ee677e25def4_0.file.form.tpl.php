@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:41
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:08
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\tags\helpers\form\form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af7115a598_50700993',
+  'unifunc' => 'content_6828e3c011d197_04386553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af7115a598_50700993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c011d197_04386553 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13323478936827af711562a2_38834206', "other_input");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14217359216828e3c0118d75_28482154', "other_input");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "helpers/form/form.tpl");
 }
 /* {block "other_input"} */
-class Block_13323478936827af711562a2_38834206 extends Smarty_Internal_Block
+class Block_14217359216828e3c0118d75_28482154 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'other_input' => 
   array (
-    0 => 'Block_13323478936827af711562a2_38834206',
+    0 => 'Block_14217359216828e3c0118d75_28482154',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

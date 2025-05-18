@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:40
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:07
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\cart_rules\product_rule.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af70424534_59052718',
+  'unifunc' => 'content_6828e3bf0b0bd3_46282610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af70424534_59052718 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3bf0b0bd3_46282610 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <tr id="product_rule_<?php echo intval($_smarty_tpl->tpl_vars['product_rule_group_id']->value);?>
 _<?php echo intval($_smarty_tpl->tpl_vars['product_rule_id']->value);?>
 _tr">

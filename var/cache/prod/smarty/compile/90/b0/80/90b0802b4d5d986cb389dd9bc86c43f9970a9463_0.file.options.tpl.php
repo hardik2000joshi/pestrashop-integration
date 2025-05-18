@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:41
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:08
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\stores\helpers\options\options.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af710bf937_79844621',
+  'unifunc' => 'content_6828e3c005e105_93789830',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af710bf937_79844621 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c005e105_93789830 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,18 +28,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_841581386827af710bd233_69424312', "after");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14882081426828e3c005b915_49156718', "after");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "helpers/options/options.tpl");
 }
 /* {block "after"} */
-class Block_841581386827af710bd233_69424312 extends Smarty_Internal_Block
+class Block_14882081426828e3c005b915_49156718 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'after' => 
   array (
-    0 => 'Block_841581386827af710bd233_69424312',
+    0 => 'Block_14882081426828e3c005b915_49156718',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

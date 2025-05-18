@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:39
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\checkout\_partials\customer-form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6f056c90_91031163',
+  'unifunc' => 'content_6828e3c239d954_71429608',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af6f056c90_91031163 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c239d954_71429608 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6450728126827af6f053c75_59026901', "form_field");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18613862106828e3c2399aa2_53456937', "form_field");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16414946776827af6f0562c4_57574216', "form_buttons");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17747627976828e3c239cc79_26845790', "form_buttons");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "customer/_partials/customer-form.tpl");
 }
 /* {block "form_field"} */
-class Block_6450728126827af6f053c75_59026901 extends Smarty_Internal_Block
+class Block_18613862106828e3c2399aa2_53456937 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'form_field' => 
   array (
-    0 => 'Block_6450728126827af6f053c75_59026901',
+    0 => 'Block_18613862106828e3c2399aa2_53456937',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -72,12 +72,12 @@ $_smarty_tpl->inheritance->callParent($_smarty_tpl, $this, '{$smarty.block.paren
 }
 /* {/block "form_field"} */
 /* {block "form_buttons"} */
-class Block_16414946776827af6f0562c4_57574216 extends Smarty_Internal_Block
+class Block_17747627976828e3c239cc79_26845790 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'form_buttons' => 
   array (
-    0 => 'Block_16414946776827af6f0562c4_57574216',
+    0 => 'Block_17747627976828e3c239cc79_26845790',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

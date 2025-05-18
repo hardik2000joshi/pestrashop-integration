@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:41
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:08
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\helpers\dataviz\graph.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af7143ceb4_16075274',
+  'unifunc' => 'content_6828e3c053d8f3_57647573',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af7143ceb4_16075274 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c053d8f3_57647573 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <div id="box-clients" class="col-lg-3 box-stats color1" >

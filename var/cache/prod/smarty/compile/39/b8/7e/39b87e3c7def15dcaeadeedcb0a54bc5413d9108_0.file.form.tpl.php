@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:40
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:07
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\cart_rules\form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af703c0607_98078508',
+  'unifunc' => 'content_6828e3bf029a10_56385147',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer_toolbar.tpl' => 1,
   ),
 ),false)) {
-function content_6827af703c0607_98078508 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3bf029a10_56385147 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="panel">
 	<h3><i class="icon-tag"></i> <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'Cart rule','d'=>'Admin.Catalog.Feature'),$_smarty_tpl ) );?>
 </h3>

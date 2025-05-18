@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:39
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\cms\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6f1d33a5_55472022',
+  'unifunc' => 'content_6828e3c255aa33_60516429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af6f1d33a5_55472022 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c255aa33_60516429 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12891037666827af6f1cb442_17587074', 'page_title');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6542021046828e3c2554464_37877521', 'page_title');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20901924246827af6f1ccf67_19601784', 'page_content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6973898616828e3c2555216_69968861', 'page_content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'page.tpl');
 }
 /* {block 'page_title'} */
-class Block_12891037666827af6f1cb442_17587074 extends Smarty_Internal_Block
+class Block_6542021046828e3c2554464_37877521 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'page_title' => 
   array (
-    0 => 'Block_12891037666827af6f1cb442_17587074',
+    0 => 'Block_6542021046828e3c2554464_37877521',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -56,7 +56,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'page_title'} */
 /* {block 'cms_sub_categories'} */
-class Block_3876993226827af6f1cd771_09604899 extends Smarty_Internal_Block
+class Block_11832772936828e3c2555588_01423626 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -84,7 +84,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'cms_sub_categories'} */
 /* {block 'cms_sub_pages'} */
-class Block_10302097326827af6f1d0ad9_60434688 extends Smarty_Internal_Block
+class Block_15425276626828e3c25580a5_76162682 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -112,32 +112,32 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'cms_sub_pages'} */
 /* {block 'page_content'} */
-class Block_20901924246827af6f1ccf67_19601784 extends Smarty_Internal_Block
+class Block_6973898616828e3c2555216_69968861 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'page_content' => 
   array (
-    0 => 'Block_20901924246827af6f1ccf67_19601784',
+    0 => 'Block_6973898616828e3c2555216_69968861',
   ),
   'cms_sub_categories' => 
   array (
-    0 => 'Block_3876993226827af6f1cd771_09604899',
+    0 => 'Block_11832772936828e3c2555588_01423626',
   ),
   'cms_sub_pages' => 
   array (
-    0 => 'Block_10302097326827af6f1d0ad9_60434688',
+    0 => 'Block_15425276626828e3c25580a5_76162682',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3876993226827af6f1cd771_09604899', 'cms_sub_categories', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11832772936828e3c2555588_01423626', 'cms_sub_categories', $this->tplIndex);
 ?>
 
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10302097326827af6f1d0ad9_60434688', 'cms_sub_pages', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15425276626828e3c25580a5_76162682', 'cms_sub_pages', $this->tplIndex);
 ?>
 
 <?php

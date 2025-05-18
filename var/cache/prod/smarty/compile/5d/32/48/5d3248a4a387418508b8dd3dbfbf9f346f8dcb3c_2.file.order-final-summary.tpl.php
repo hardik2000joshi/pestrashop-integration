@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:39
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\checkout\_partials\order-final-summary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6f0e90f1_76959949',
+  'unifunc' => 'content_6828e3c2450ff0_68255620',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:checkout/_partials/order-final-summary-table.tpl' => 1,
   ),
 ),false)) {
-function content_6827af6f0e90f1_76959949 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c2450ff0_68255620 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -109,19 +109,19 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
   <div class="row">
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14361363326827af6f0e7631_22627134', 'order_confirmation_table');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9681917386828e3c244e649_48046314', 'order_confirmation_table');
 ?>
 
   </div>
 </section>
 <?php }
 /* {block 'order_confirmation_table'} */
-class Block_14361363326827af6f0e7631_22627134 extends Smarty_Internal_Block
+class Block_9681917386828e3c244e649_48046314 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'order_confirmation_table' => 
   array (
-    0 => 'Block_14361363326827af6f0e7631_22627134',
+    0 => 'Block_9681917386828e3c244e649_48046314',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:38
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\checkout\_partials\cart-detailed.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6eeba685_24646285',
+  'unifunc' => 'content_6828e3c22aa0a5_06647870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,15 +21,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:checkout/_partials/cart-detailed-product-line.tpl' => 1,
   ),
 ),false)) {
-function content_6827af6eeba685_24646285 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c22aa0a5_06647870 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4992929736827af6eeb4669_76721837', 'cart_detailed_product');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12102393836828e3c22a3f18_30611367', 'cart_detailed_product');
 ?>
 
 <?php }
 /* {block 'cart_detailed_product_line'} */
-class Block_21109773156827af6eeb6137_26388493 extends Smarty_Internal_Block
+class Block_20812470566828e3c22a5a01_38743117 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -41,16 +41,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'cart_detailed_product_line'} */
 /* {block 'cart_detailed_product'} */
-class Block_4992929736827af6eeb4669_76721837 extends Smarty_Internal_Block
+class Block_12102393836828e3c22a3f18_30611367 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'cart_detailed_product' => 
   array (
-    0 => 'Block_4992929736827af6eeb4669_76721837',
+    0 => 'Block_12102393836828e3c22a3f18_30611367',
   ),
   'cart_detailed_product_line' => 
   array (
-    0 => 'Block_21109773156827af6eeb6137_26388493',
+    0 => 'Block_20812470566828e3c22a5a01_38743117',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,7 +68,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
         <li class="cart-item">
           <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21109773156827af6eeb6137_26388493', 'cart_detailed_product_line', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20812470566828e3c22a5a01_38743117', 'cart_detailed_product_line', $this->tplIndex);
 ?>
 
         </li>

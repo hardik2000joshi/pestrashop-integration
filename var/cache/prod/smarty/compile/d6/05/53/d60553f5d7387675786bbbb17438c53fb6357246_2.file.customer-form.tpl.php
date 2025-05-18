@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:39
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\customer\_partials\customer-form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6f496047_09594173',
+  'unifunc' => 'content_6828e3c2979726_58991022',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,15 +21,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_partials/form-errors.tpl' => 1,
   ),
 ),false)) {
-function content_6827af6f496047_09594173 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c2979726_58991022 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4077859006827af6f4913f6_21863869', 'customer_form');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17889074456828e3c296dff2_40932785', 'customer_form');
 ?>
 
 <?php }
 /* {block 'customer_form_errors'} */
-class Block_10467294346827af6f4918a9_31663107 extends Smarty_Internal_Block
+class Block_14050157666828e3c296e647_09766889 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -41,7 +41,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'customer_form_errors'} */
 /* {block 'customer_form_actionurl'} */
-class Block_9741565296827af6f492753_98624589 extends Smarty_Internal_Block
+class Block_18662084346828e3c296f959_40250476 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 echo htmlspecialchars($_smarty_tpl->tpl_vars['action']->value, ENT_QUOTES, 'UTF-8');
@@ -49,7 +49,7 @@ echo htmlspecialchars($_smarty_tpl->tpl_vars['action']->value, ENT_QUOTES, 'UTF-
 }
 /* {/block 'customer_form_actionurl'} */
 /* {block "form_field"} */
-class Block_12805903366827af6f493b93_13226703 extends Smarty_Internal_Block
+class Block_340077916828e3c29735d5_25453754 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -61,7 +61,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "form_field"} */
 /* {block "form_fields"} */
-class Block_19435820456827af6f493089_15581367 extends Smarty_Internal_Block
+class Block_4795255786828e3c2971646_51291126 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -73,7 +73,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['field']->value) 
 $_smarty_tpl->tpl_vars['field']->do_else = false;
 ?>
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12805903366827af6f493b93_13226703', "form_field", $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_340077916828e3c29735d5_25453754', "form_field", $this->tplIndex);
 ?>
 
       <?php
@@ -86,7 +86,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block "form_fields"} */
 /* {block "form_buttons"} */
-class Block_4115936926827af6f495200_12562590 extends Smarty_Internal_Block
+class Block_10937221446828e3c29777e7_30615122 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -100,7 +100,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "form_buttons"} */
 /* {block 'customer_form_footer'} */
-class Block_904965256827af6f494d85_00149346 extends Smarty_Internal_Block
+class Block_8580242156828e3c2976c85_40257831 extends Smarty_Internal_Block
 {
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
@@ -108,7 +108,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <footer class="form-footer clearfix">
       <input type="hidden" name="submitCreate" value="1">
       <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4115936926827af6f495200_12562590', "form_buttons", $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10937221446828e3c29777e7_30615122', "form_buttons", $this->tplIndex);
 ?>
 
     </footer>
@@ -117,59 +117,59 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4115936926827af6f4
 }
 /* {/block 'customer_form_footer'} */
 /* {block 'customer_form'} */
-class Block_4077859006827af6f4913f6_21863869 extends Smarty_Internal_Block
+class Block_17889074456828e3c296dff2_40932785 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'customer_form' => 
   array (
-    0 => 'Block_4077859006827af6f4913f6_21863869',
+    0 => 'Block_17889074456828e3c296dff2_40932785',
   ),
   'customer_form_errors' => 
   array (
-    0 => 'Block_10467294346827af6f4918a9_31663107',
+    0 => 'Block_14050157666828e3c296e647_09766889',
   ),
   'customer_form_actionurl' => 
   array (
-    0 => 'Block_9741565296827af6f492753_98624589',
+    0 => 'Block_18662084346828e3c296f959_40250476',
   ),
   'form_fields' => 
   array (
-    0 => 'Block_19435820456827af6f493089_15581367',
+    0 => 'Block_4795255786828e3c2971646_51291126',
   ),
   'form_field' => 
   array (
-    0 => 'Block_12805903366827af6f493b93_13226703',
+    0 => 'Block_340077916828e3c29735d5_25453754',
   ),
   'customer_form_footer' => 
   array (
-    0 => 'Block_904965256827af6f494d85_00149346',
+    0 => 'Block_8580242156828e3c2976c85_40257831',
   ),
   'form_buttons' => 
   array (
-    0 => 'Block_4115936926827af6f495200_12562590',
+    0 => 'Block_10937221446828e3c29777e7_30615122',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10467294346827af6f4918a9_31663107', 'customer_form_errors', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14050157666828e3c296e647_09766889', 'customer_form_errors', $this->tplIndex);
 ?>
 
 
 <form action="<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9741565296827af6f492753_98624589', 'customer_form_actionurl', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18662084346828e3c296f959_40250476', 'customer_form_actionurl', $this->tplIndex);
 ?>
 " id="customer-form" class="js-customer-form" method="post">
   <div>
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19435820456827af6f493089_15581367', "form_fields", $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4795255786828e3c2971646_51291126', "form_fields", $this->tplIndex);
 ?>
 
   </div>
 
   <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_904965256827af6f494d85_00149346', 'customer_form_footer', $this->tplIndex);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8580242156828e3c2976c85_40257831', 'customer_form_footer', $this->tplIndex);
 ?>
 
 

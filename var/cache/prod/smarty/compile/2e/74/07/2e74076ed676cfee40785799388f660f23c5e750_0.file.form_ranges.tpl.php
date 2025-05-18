@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:40
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:06
   from 'C:\xampp\htdocs\prestashop-integration\admin\themes\default\template\controllers\carrier_wizard\helpers\form\form_ranges.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af7026d039_53160317',
+  'unifunc' => 'content_6828e3bedb9139_31007211',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af7026d039_53160317 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3bedb9139_31007211 (Smarty_Internal_Template $_smarty_tpl) {
 ?>		<?php echo '<script'; ?>
 >var zones_nbr = <?php echo count($_smarty_tpl->tpl_vars['zones']->value)+3;?>
  ; /*corresponds to the third input text (max, min and all)*/<?php echo '</script'; ?>

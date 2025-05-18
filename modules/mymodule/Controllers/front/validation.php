@@ -1,21 +1,15 @@
 <?php
 class MyModuleValidationModuleFrontController extends ModuleFrontController {
-    public function initContent() // initContent() method used to initialize content of  a page in PrestaShop
-    {
-        parent::initContent();
-        // check if payment- successful or failed
-        // to integrate payment gateway API Logic
-        // ex: validate payment status via an api call
-        $paymentStatus='success';
-        if($paymentStatus=='success'){
-            // if payment successful, redirect to confirmation page
-            $this->setTemplate('payment_success.tpl'); // custom success template
-        }
-        else {
-            // If payment fails, show an error message
-            $this->setTemplate('payment_failure.tpl'); // custom failure template
-        }
 
+    // helper method: sendPaymentRequest
+    private function sendPaymentRequest($data) {
+        // using curl to send POST request to payment provider
+        $ch= curl_init('https://your-payment-gateway.com/api/pay');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $response=curl_exec($ch);
+        curl_close($ch);
+        return json_decode($response, true);
     }
     public function postProcess(){
         // Here you can validate  cart, send to external payment, etc. 
@@ -33,17 +27,32 @@ class MyModuleValidationModuleFrontController extends ModuleFrontController {
             Tools::redirect('index.php?controller=order&step=1');
         }
 
-        // simulate a payment success
-        $paymentStatus='success';
+        // Build API request data
+        $amount=(float)$cart->getOrderTotal(true, Cart::BOTH);
+        $currency=$this->context->currency->iso_code;
 
-        if($paymentStatus==='success') {
-            // validate order(if applicable) or redirect to third-party
+        // Send payment request to an external API
+        $response=$this->sendPaymentRequest([
+            'amount'=>$amount,
+            'currency'=>$currency,
+            'order_id'=>$cart->id,
+            'customer_email'=>$this->context->customer->email,
+        ]);
+
+        // if api fails or times out, json_decode() could return null, so safeguard it by this condition: 
+        if(!isset($response['status']) || $response['status'] !== 'success') {
+            Tools::redirect($this->context->link->getModuleLink('mymodule', 'failure')); // redirect user to custom payment failure page
+            return;
+        }
+        
+        // set the order status
+        $orderStatus=Configuration::get('PS_OS_PAYMENT');
+
+        // validate and create the order
         $this->module->validateOrder(
             (int)$cart->id,
-            // PS_OS_PREPARATION used when payment initiated but not confirmed
-            // PS_OS_PAYMENT used when payment confirmed
-            Configuration::get('PS_OS_PREPARATION'), // or PS_OS_PAYMENT depending on flow
-            (float)$cart->getOrderTotal(true, Cart::BOTH),
+            $orderStatus,
+            $amount,
             $this->module->displayName,
             null,
             [],
@@ -57,11 +66,6 @@ class MyModuleValidationModuleFrontController extends ModuleFrontController {
         '&id_module=' . (int)$this->module->id .
         '&id_order=' . (int)$this->module->currentOrder .
         '&key=' . $this->context->customer->secure_key);
-        }
-        else {
-            // Redirect to custom failure page or show error
-            Tools::redirect($this->context->link->getModuleLink('mymodule', 'failure'));
-        }
     }
 }
     

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2025-05-16 23:34:39
+/* Smarty version 3.1.48, created on 2025-05-17 21:30:10
   from 'C:\xampp\htdocs\prestashop-integration\themes\classic\templates\customer\_partials\my-account-links.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6827af6f4c1e38_70504410',
+  'unifunc' => 'content_6828e3c29dbf05_21614628',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,20 +20,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6827af6f4c1e38_70504410 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6828e3c29dbf05_21614628 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6258597206827af6f4c0274_05563020', 'my_account_links');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4566755406828e3c29d17b6_47649925', 'my_account_links');
 ?>
 
 <?php }
 /* {block 'my_account_links'} */
-class Block_6258597206827af6f4c0274_05563020 extends Smarty_Internal_Block
+class Block_4566755406828e3c29d17b6_47649925 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'my_account_links' => 
   array (
-    0 => 'Block_6258597206827af6f4c0274_05563020',
+    0 => 'Block_4566755406828e3c29d17b6_47649925',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
