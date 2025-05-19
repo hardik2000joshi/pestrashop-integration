@@ -68,7 +68,11 @@ class MyModuleValidationModuleFrontController extends ModuleFrontController {
             'currency'=>$currency,
             'order_id'=>$cart->id,
             'customer_email'=>$this->context->customer->email,
-        ], $gateway);   
+        ], $gateway);  
+        
+        // simulate internal module endpoint links
+        $sessionUrl=$this->context->link->getModuleLink('mymodule', 'payment_session');
+        $authorizeUrl=$this->context->link->getModuleLink('mymodule', 'payment_authorize');
 
         // if api fails or times out, json_decode() could return null, so safeguard it by this condition: 
         if(!isset($response['status']) || $response['status'] !== 'success') {
@@ -92,7 +96,7 @@ class MyModuleValidationModuleFrontController extends ModuleFrontController {
             $this->context->customer->secure_key 
         );
 
-        // Redirect to order confirmation
+        // Redirect to confirmation page
         Tools::redirect('index.php?controller=order-confirmation&id_cart=' . (int)$cart->id . 
         '&id_module=' . (int)$this->module->id .
         '&id_order=' . (int)$this->module->currentOrder .
