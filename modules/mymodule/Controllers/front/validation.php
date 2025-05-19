@@ -2,16 +2,37 @@
 class MyModuleValidationModuleFrontController extends ModuleFrontController {
 
     // helper method: sendPaymentRequest
-    private function sendPaymentRequest($data) { 
-        // using curl to send POST request to payment provider
-        $ch= curl_init('https://your-payment-gateway.com/api/pay');
+    private function sendPaymentRequest($data, $gateway) { 
+        // determine API URL based on selected gateway
+        switch ($gateway) {
+            case 'razorpay':
+                $url='https://api.razorpay.com/v1/orders';
+                break;
+                case 'cashfree':
+                    $url='https://api.cashfree.com/pg/orders';
+                    break;
+                    case 'paytm':
+                    $url='https://securegw.paytm.in/theia/api/v1/initiateTransaction';
+                    break;
+                    case 'phonepe':
+                    $url='https://api.phonepe.com/apis/hermes/pg/v1/pay';
+                    break;
+                    case 'instamojo':
+                    $url='https://api.instamojo.com/v2/payment_requests/';
+                    break;
+            default:
+            return ['status' => 'error', 'message' => 'Incorrect payment gateway'];
+        }
+        //send POST request
+        $ch= curl_init($url);
+
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         $response=curl_exec($ch);
         if($response===false){
             // could log curl_error($ch) for debugging
              curl_close($ch);
-             return ['status'=>'error', 'message'=>'curl error'];    
+             return ['status'=>'error', 'message'=>'cURL error'];       
         }
         curl_close($ch);
         $result=json_decode($response, true);
@@ -41,12 +62,13 @@ class MyModuleValidationModuleFrontController extends ModuleFrontController {
         $currency=$this->context->currency->iso_code;
 
         // Send payment request to an external API
+        $gateway=Tools::getValue('gateway'); // from URL or form input
         $response=$this->sendPaymentRequest([
             'amount'=>$amount,
             'currency'=>$currency,
             'order_id'=>$cart->id,
             'customer_email'=>$this->context->customer->email,
-        ]);
+        ], $gateway);   
 
         // if api fails or times out, json_decode() could return null, so safeguard it by this condition: 
         if(!isset($response['status']) || $response['status'] !== 'success') {
